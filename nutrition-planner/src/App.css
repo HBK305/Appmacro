@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Miami Vice Color Palette */
+:root {
+  --miami-pink: #ff6b9d;
+  --miami-blue: #4ecdc4;
+  --miami-purple: #a8e6cf;
+  --miami-orange: #ffd93d;
+  --miami-dark: #2d1b69;
+  --miami-light: #ffffff;
+}
+
+/* Base styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.glass-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Form sections */
+.form-section {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-2px);
+}
+
+/* Section titles */
+.section-title {
+  background: linear-gradient(45deg, var(--miami-pink), var(--miami-blue), var(--miami-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid layout */
+.miami-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Labels */
+.miami-label {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input fields */
+.miami-input {
+  width: 100%;
+  background: rgba(45, 27, 105, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.miami-input:focus {
+  outline: none;
+  border-color: var(--miami-pink);
+  background: rgba(45, 27, 105, 0.9);
+  box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.3);
+}
+
+.miami-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Select dropdowns */
+.miami-select {
+  width: 100%;
+  background: rgba(45, 27, 105, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.miami-select:focus {
+  outline: none;
+  border-color: var(--miami-blue);
+  background: rgba(45, 27, 105, 0.9);
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+}
+
+.miami-select option {
+  background: var(--miami-dark);
+  color: white;
+  padding: 8px;
+}
+
+/* Button */
+.miami-button {
+  width: 100%;
+  background: linear-gradient(45deg, var(--miami-pink), var(--miami-blue));
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+
+.miami-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+}
+
+/* Messages */
+.error-message {
+  background: rgba(255, 107, 157, 0.2);
+  border: 1px solid rgba(255, 107, 157, 0.5);
+  border-radius: 8px;
+  padding: 16px;
+  color: white;
+  margin: 16px 0;
+}
+
+.success-message {
+  background: rgba(78, 205, 196, 0.2);
+  border: 1px solid rgba(78, 205, 196, 0.5);
+  border-radius: 8px;
+  padding: 16px;
+  color: white;
+  margin: 16px 0;
+}
+
+/* Results section */
+.results-section {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 32px;
+}
+
+.results-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.results-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(4px);
+}
+
+/* Color classes */
+.text-miami-pink { color: var(--miami-pink); }
+.text-miami-blue { color: var(--miami-blue); }
+.text-miami-purple { color: var(--miami-purple); }
+.text-miami-orange { color: var(--miami-orange); }
+.text-miami-light { color: var(--miami-light); }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .miami-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .glass-container {
+    padding: 16px;
+  }
+  
+  .form-section {
+    padding: 16px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
