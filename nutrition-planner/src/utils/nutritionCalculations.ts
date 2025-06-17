@@ -17,16 +17,8 @@ export const calculateCalories = (weight: number, height: number, age: number, g
     throw new Error('Invalid BMR calculation result');
   }
 
-  // Adjust for activity level
-  const activityMultipliers = {
-    1.2: 'Sedentary',
-    1.375: 'Lightly active',
-    1.55: 'Moderately active',
-    1.725: 'Very active',
-    1.9: 'Extra active',
-  };
-
-  if (!Object.keys(activityMultipliers).includes(activityLevel.toString())) {
+  // Validate activity level range (allow calculated values, not just exact matches)
+  if (activityLevel < 1.0 || activityLevel > 2.5) {
     throw new Error('Invalid activity level');
   }
 
