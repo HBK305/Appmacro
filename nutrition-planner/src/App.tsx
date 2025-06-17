@@ -12,24 +12,24 @@ function App() {
   const [showProgress, setShowProgress] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">Nutrition Planner</h1>
+    <div className="min-h-screen">
+      <header className="p-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="brand-container">
+            <h1 className="brand-title">Glowbit</h1>
+            <p className="brand-slogan">Eat like you mean it</p>
+          </div>
+          <button
+            onClick={() => setShowProgress(!showProgress)}
+            className="miami-button max-w-xs"
+          >
+            {showProgress ? 'Show Meal Plan' : 'Show Progress'}
+          </button>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="px-4 py-6 sm:px-0">
-          <div className="flex justify-end mb-4">
-            <button
-              onClick={() => setShowProgress(!showProgress)}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
-              {showProgress ? 'Show Meal Plan' : 'Show Progress'}
-            </button>
-          </div>
-
+      <main className="max-w-7xl mx-auto py-6 px-6">
+        <div className="glass-container">
           {showProgress ? (
             <ProgressTracker
               targetCalories={mealPlan.reduce((sum, meal) => sum + meal.totalCalories, 0)}

@@ -43,61 +43,64 @@ export default function MealPlanExport({ mealPlan, mealTiming }: MealPlanExportP
   };
 
   return (
-    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <h3 className="text-lg font-semibold mb-4">Export Meal Plan</h3>
+    <div className="export-section">
+      <h3 className="export-title">Export Meal Plan</h3>
       
       {/* Export Options */}
-      <div className="mb-6">
-        <h4 className="text-sm font-medium text-gray-700 mb-2">Export Options</h4>
-        <div className="space-y-2">
-          <label className="flex items-center">
+      <div className="export-options">
+        <h4 className="export-subtitle">Export Options</h4>
+        <div className="export-checkboxes">
+          <label className="export-checkbox-label">
             <input
               type="checkbox"
               checked={exportOptions.includeMacros}
               onChange={(e) => setExportOptions(prev => ({ ...prev, includeMacros: e.target.checked }))}
-              className="mr-2"
+              className="export-checkbox"
             />
-            Include Macros
+            <span className="export-checkbox-text">Include Macros</span>
           </label>
-          <label className="flex items-center">
+          <label className="export-checkbox-label">
             <input
               type="checkbox"
               checked={exportOptions.includeCalories}
               onChange={(e) => setExportOptions(prev => ({ ...prev, includeCalories: e.target.checked }))}
-              className="mr-2"
+              className="export-checkbox"
             />
-            Include Calories
+            <span className="export-checkbox-text">Include Calories</span>
           </label>
-          <label className="flex items-center">
+          <label className="export-checkbox-label">
             <input
               type="checkbox"
               checked={exportOptions.includeNotes}
               onChange={(e) => setExportOptions(prev => ({ ...prev, includeNotes: e.target.checked }))}
-              className="mr-2"
+              className="export-checkbox"
             />
-            Include Notes
+            <span className="export-checkbox-text">Include Notes</span>
           </label>
         </div>
       </div>
 
       {/* Export Buttons */}
-      <div className="flex space-x-4">
+      <div className="export-buttons">
         <button
           onClick={() => handleExport('text')}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="export-button export-button-text"
         >
+          <span className="export-button-icon">📄</span>
           Export as Text
         </button>
         <button
           onClick={() => handleExport('csv')}
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="export-button export-button-csv"
         >
+          <span className="export-button-icon">📊</span>
           Export as CSV
         </button>
         <button
           onClick={() => handleExport('json')}
-          className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="export-button export-button-json"
         >
+          <span className="export-button-icon">⚡</span>
           Export as JSON
         </button>
       </div>
